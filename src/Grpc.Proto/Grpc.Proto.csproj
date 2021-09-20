@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Protos\greet.proto" />
+	  <None Remove="Protos\greet.service.proto" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Google.Protobuf" Version="3.18.0" />
+	  <PackageReference Include="Grpc.AspNetCore.Server" Version="2.39.0" />
+	  <PackageReference Include="Grpc.Net.ClientFactory" Version="2.39.0" />
+	  <PackageReference Include="Grpc.Tools" Version="2.40.0">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Protobuf Include="Protos\greet.proto" GrpcServices="Both" />
+	  <Protobuf Include="Protos\greet.service.proto" GrpcServices="Both" />
+	</ItemGroup>
+
+</Project>
